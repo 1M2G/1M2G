@@ -1,0 +1,22 @@
+# Method 1: Using a while loop
+odd_numbers1 = []
+count = 0
+number = 1
+
+while count < 20:
+    odd_numbers1.append(number)
+    number += 2
+    count += 1
+
+print(odd_numbers1)
+
+# Method 2: Using a generator and list comprehension
+def odd_generator():
+    number = 1
+    while True:
+        yield number
+        number += 2
+
+odd_numbers2 = [next(odd_generator()) for _ in range(20)]
+print(odd_numbers2)
+
